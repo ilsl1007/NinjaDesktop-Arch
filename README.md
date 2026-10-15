@@ -4,24 +4,24 @@
 
 - 架构：`x86_64`
 - 软件版本：`1.0.6`
-- Arch 包版本：`1.0.6-2`（`-2` 为本地打包修订号）
+- Arch 包版本：`1.0.6-2`（`-2` 为本地打包修订号，下载文件名省略此修订号）
 
 这是非官方打包仓库；软件版权归原作者所有。
 
 ## 下载与安装
 
-[下载安装包](https://github.com/ilsl1007/NinjaDesktop-Arch/releases/download/ninjadesktop-1.0.6-arch2/ninjadesktop-electron-1.0.6-2-x86_64.pkg.tar.zst) · [Release 页面](https://github.com/ilsl1007/NinjaDesktop-Arch/releases/tag/ninjadesktop-1.0.6-arch2)
+[下载安装包](https://github.com/ilsl1007/NinjaDesktop-Arch/releases/download/ninjadesktop-1.0.6-arch2/ninjadesktop-electron-1.0.6-x86_64.pkg.tar.zst) · [Release 页面](https://github.com/ilsl1007/NinjaDesktop-Arch/releases/tag/ninjadesktop-1.0.6-arch2)
 
 ```bash
 # 下载 Arch 安装包
-curl -fLO https://github.com/ilsl1007/NinjaDesktop-Arch/releases/download/ninjadesktop-1.0.6-arch2/ninjadesktop-electron-1.0.6-2-x86_64.pkg.tar.zst
+curl -fLO https://github.com/ilsl1007/NinjaDesktop-Arch/releases/download/ninjadesktop-1.0.6-arch2/ninjadesktop-electron-1.0.6-x86_64.pkg.tar.zst
 
 # 下载校验文件并核对安装包
 curl -fLO https://github.com/ilsl1007/NinjaDesktop-Arch/releases/download/ninjadesktop-1.0.6-arch2/SHA256SUMS
 sha256sum -c SHA256SUMS
 
 # 安装软件，按提示确认依赖
-sudo pacman -U ./ninjadesktop-electron-1.0.6-2-x86_64.pkg.tar.zst
+sudo pacman -U ./ninjadesktop-electron-1.0.6-x86_64.pkg.tar.zst
 
 # 启动软件，也可以从应用菜单打开 NinjaDesktop
 /opt/NinjaDesktop/ninjadesktop-electron

@@ -1,6 +1,6 @@
 # NinjaDesktop 1.0.6 打包命令
 
-本流程仅针对 `NinjaDesktop-1.0.6-linux-amd64.deb` 和 `x86_64` 系统。最终生成 `ninjadesktop-electron-1.0.6-2-x86_64.pkg.tar.zst`。
+本流程仅针对 `NinjaDesktop-1.0.6-linux-amd64.deb` 和 `x86_64` 系统。最终生成 `ninjadesktop-electron-1.0.6-x86_64.pkg.tar.zst`。
 
 ## 首次准备
 
@@ -36,14 +36,18 @@ env LC_ALL=C debtap ./NinjaDesktop-1.0.6-linux-amd64.deb
 python3 ./scripts/repair-ninjadesktop.py \
   ./ninjadesktop-electron-1.0.6-1-x86_64.pkg.tar.zst
 
+# 将修正后的包重命名为发布时使用的文件名，包内版本仍为 1.0.6-2
+mv -n ./ninjadesktop-electron-1.0.6-2-x86_64.pkg.tar.zst \
+  ./ninjadesktop-electron-1.0.6-x86_64.pkg.tar.zst
+
 # 检查 pacman 能否读取包并解析安装事务，不实际安装
-pacman -Up --print-format '%n %v' ./ninjadesktop-electron-1.0.6-2-x86_64.pkg.tar.zst
+pacman -Up --print-format '%n %v' ./ninjadesktop-electron-1.0.6-x86_64.pkg.tar.zst
 
 # 检查安装脚本语法，成功时无输出
-bsdtar -xOf ./ninjadesktop-electron-1.0.6-2-x86_64.pkg.tar.zst .INSTALL | bash -n
+bsdtar -xOf ./ninjadesktop-electron-1.0.6-x86_64.pkg.tar.zst .INSTALL | bash -n
 
 # 安装最终包
-sudo pacman -U ./ninjadesktop-electron-1.0.6-2-x86_64.pkg.tar.zst
+sudo pacman -U ./ninjadesktop-electron-1.0.6-x86_64.pkg.tar.zst
 ```
 
 修正脚本保留原转换包；最终包已经存在时会拒绝覆盖。不同 debtap 版本可能生成不同内容，此脚本会检查预期的包信息和安装脚本，不适用于其他软件。
