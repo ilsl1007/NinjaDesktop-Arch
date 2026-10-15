@@ -2,6 +2,8 @@
 
 将 NinjaDesktop **1.0.6** 的官方 amd64 DEB 重新打包为 Arch Linux / CachyOS 可安装的软件包，已在 CachyOS 上验证可用。
 
+源仓库：[kachetong1314/ninja](https://github.com/kachetong1314/ninja)。
+
 - 架构：`x86_64`
 - 软件版本：`1.0.6`
 - Arch 包版本：`1.0.6-2`（`-2` 为本地打包修订号，下载文件名省略此修订号）
